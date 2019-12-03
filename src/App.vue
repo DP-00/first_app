@@ -1,28 +1,36 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <template>
+  <div>  
+    <h1>{{title}}</h1>
+    <button @click="changeMood()">change</button>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    export default {
+        data(){
+            return {
+           
+               happy: true,
+               title: "Happy"   
+                        }
+        },
+        methods: {
+            changeMood() {
+               this.happy=!this.happy; 
+              
+             // this.whateer=this.happy? "Happy":"Sad"; - krotsza metoda
+            //mozna dodac 22 do <h1> i usunac tu if
+               if(this.happy){
+                  this.title="Happy";
+               }
+               else{
+                  this.title="Sad"
+               }
+            },
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+         
+        }
+        
+    };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

@@ -1,0 +1,30 @@
+ <template>
+  <div>  
+    <h1>Clicked {{ noOfclick }} times</h1>
+    <h2> {{noOfclick*noOfclick}}</h2>
+    <button @click="iAmClicked()">More</button>
+    <button @click="Reset()">Reset</button>
+  </div>
+</template>
+
+<script>
+    export default {
+        data(){
+            return {
+            title: 'Not clicked yet',
+            noOfclick: 0
+            }
+        },
+        methods: {
+            iAmClicked() {
+                this.noOfclick=this.noOfclick+1;
+            },
+
+            Reset(){
+               this.noOfclick=0;
+            }
+
+        }
+        
+    };
+</script>
